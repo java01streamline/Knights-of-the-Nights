@@ -7,6 +7,7 @@ package gui;
 
 import java.util.ArrayList;
 import model.gui.main.Cell;
+import resources.images.ImageInstance;
 import service.gui.MainService;
 import service.gui.impl.MainServiceImpl;
 
@@ -20,6 +21,7 @@ public class Main extends javax.swing.JFrame {
     
     public Main() {
         initComponents();
+        this.setIconImage(ImageInstance.getDefault());
         mainService.mapInit(this.map);
     }
 
@@ -40,6 +42,7 @@ public class Main extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Knights of the Nights");
 
         map.setMaximumSize(new java.awt.Dimension(640, 640));
         map.setPreferredSize(new java.awt.Dimension(640, 640));
