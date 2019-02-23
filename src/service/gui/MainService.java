@@ -8,5 +8,5 @@ public interface MainService {
     
     void mapInit(JPanel map);
     
-    void createBuilding(Cell cell);
+    void setImage(Cell cell, Cell button);
 }

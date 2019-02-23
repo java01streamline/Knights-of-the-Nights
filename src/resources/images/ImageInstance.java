@@ -25,4 +25,13 @@ public class ImageInstance {
             throw new UnsupportedOperationException();
         }
     }
+    
+    public static BufferedImage getResidentBuilding(){
+        try {
+            return ImageIO.read(ImageInstance.class.getResourceAsStream("buildings/residential_building.png"));
+        } catch (IOException ex) {
+            Logger.getLogger(ImageInstance.class.getName()).log(Level.SEVERE, null, ex);
+            throw new UnsupportedOperationException();
+        }
+    }
 }
