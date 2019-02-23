@@ -2,10 +2,6 @@ package service.gui.impl;
 
 import gui.Main;
 import java.awt.Dimension;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JPanel;
 import model.gui.main.Cell;
 import resources.images.ImageInstance;
@@ -35,9 +31,16 @@ public class MainServiceImpl implements MainService {
             }
         }
     }
+    
+    @Override
+    public void mapActions(JPanel actions) {
+        
+    }
 
     @Override
     public void setImage(Cell cell, Cell button) {
         cell.setIm(button.getIm());
     }
+
+    
 }
