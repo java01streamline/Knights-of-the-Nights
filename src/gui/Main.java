@@ -27,6 +27,7 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         this.setIconImage(ImageInstance.getDefault());
         mainService.mapInit(this.map);
+        mainService.mapActions(buildings);
         Cell rb = new Cell(ImageInstance.getResidentBuilding());
         rb.updateImage(32, 32);
         rb.setPreferredSize(new Dimension(32, 32));
@@ -59,8 +60,7 @@ public class Main extends javax.swing.JFrame {
         actions = new javax.swing.JTabbedPane();
         buildings = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        hub = new javax.swing.JButton();
+        resources = new javax.swing.JPanel();
 
         jButton1.setText("jButton1");
 
@@ -82,7 +82,7 @@ public class Main extends javax.swing.JFrame {
             .addGap(0, 554, Short.MAX_VALUE)
         );
 
-        actions.addTab("ПОСТРОЙКИ", buildings);
+        actions.addTab("Buildings", buildings);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -97,18 +97,18 @@ public class Main extends javax.swing.JFrame {
 
         actions.addTab("tab2", jPanel2);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout resourcesLayout = new javax.swing.GroupLayout(resources);
+        resources.setLayout(resourcesLayout);
+        resourcesLayout.setHorizontalGroup(
+            resourcesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 192, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        resourcesLayout.setVerticalGroup(
+            resourcesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 554, Short.MAX_VALUE)
         );
 
-        actions.addTab("tab3", jPanel3);
+        actions.addTab("Resources", resources);
 
         javax.swing.GroupLayout actionsPanelLayout = new javax.swing.GroupLayout(actionsPanel);
         actionsPanel.setLayout(actionsPanelLayout);
@@ -129,11 +129,6 @@ public class Main extends javax.swing.JFrame {
 
         actions.getAccessibleContext().setAccessibleName("Buildings");
 
-        hub.setText("ВЫЙТИ");
-        hub.setMaximumSize(new java.awt.Dimension(100, 30));
-        hub.setMinimumSize(new java.awt.Dimension(100, 30));
-        hub.setPreferredSize(new java.awt.Dimension(100, 30));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -141,14 +136,8 @@ public class Main extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(map, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 125, Short.MAX_VALUE)
-                        .addComponent(hub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(actionsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(18, 18, 18)
+                .addComponent(actionsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,8 +147,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(map, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(actionsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(hub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(36, 36, 36)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -172,10 +160,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTabbedPane actions;
     private javax.swing.JPanel actionsPanel;
     private javax.swing.JPanel buildings;
-    private javax.swing.JButton hub;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel map;
+    private javax.swing.JPanel resources;
     // End of variables declaration//GEN-END:variables
 }

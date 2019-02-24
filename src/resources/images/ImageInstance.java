@@ -20,7 +20,7 @@ import javax.imageio.ImageIO;
  */
 public class ImageInstance {
     
-    private static String bNames[] = {"archery_tower.png","barrack.png","camp_of_units.png","residential_building.png"};
+    private static String bNames[] = {"tower.png","barrack.png","mill.png","residential_building.png"};
     
     public static BufferedImage getDefault(){
         try {
@@ -40,12 +40,16 @@ public class ImageInstance {
         }
     }
     
-    public static ArrayList<BufferedImage> getBuildings() throws IOException{
+    public static ArrayList<BufferedImage> getBuildings(){
         ArrayList<BufferedImage> buildings = new ArrayList<>();
         //File f=new File("C\\Users\\Admin\\Documents\\NetBeansProjects\\Knights-of-the-Nights\\src\\resources\\images\\buildings");
        
         for(int i = 0; i < bNames.length; i++){
-            buildings.add(ImageIO.read(ImageInstance.class.getResourceAsStream("buildings/"+bNames[i])));
+            try {
+                buildings.add(ImageIO.read(ImageInstance.class.getResourceAsStream("buildings/"+bNames[i])));
+            } catch (IOException ex) {
+                Logger.getLogger(ImageInstance.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         
        

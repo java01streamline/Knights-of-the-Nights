@@ -15,8 +15,8 @@ import javax.swing.JButton;
  * @author User
  */
 public class Cell extends JButton{
-    public static final int WIDTH = 32;
-    public static final int HEIGHT = 32;
+    public static final int WIDTH = 64;
+    public static final int HEIGHT = 64;
     private BufferedImage im;
 
     public Cell(BufferedImage im) {
