@@ -42,5 +42,10 @@ public class MainServiceImpl implements MainService {
         cell.setIm(button.getIm());
     }
 
+    @Override
+    public void mapBuilding(JPanel map) {
+        
+    }
+
     
 }

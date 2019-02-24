@@ -11,4 +11,6 @@ public interface MainService {
     void mapActions(JPanel actions);
     
     void setImage(Cell cell, Cell button);
+    
+    void mapBuilding(JPanel map);
 }

@@ -13,9 +13,9 @@ import model.unit.Entity;
  */
 public abstract class Human extends Entity{
     private int satisfaction;
-    private CitizenType type;
+    protected CitizenType type;
 
-    public Human(String name, int health, int attack, int defense, int satisfaction, CitizenType type) {
+    public Human(String name, int health, int attack, int defense, int satisfaction) {
         super(name, health, attack, defense);
         this.satisfaction = satisfaction;
         this.type = type;
