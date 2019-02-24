@@ -53,12 +53,15 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         map = new javax.swing.JPanel();
         actionsPanel = new javax.swing.JPanel();
         actions = new javax.swing.JTabbedPane();
         buildings = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Knights of the Nights");
@@ -154,6 +157,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTabbedPane actions;
     private javax.swing.JPanel actionsPanel;
     private javax.swing.JPanel buildings;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel map;
