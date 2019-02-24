@@ -1,22 +1,17 @@
 /*
-GraphicsDevice scs = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+ID of all entities [123456]:
+1 - level of entity
+2,3 - concret type
+4 - ent. type
+5 - atitude to you
+6 - image to show
 
-int wiDub = (scs.getDisplayMode().getWidth())/2;
+ID buildings - 0:
+00 administratoin
+01 prod.wood
+02 prod.food
+03 prod.metal
+04 prod.water
+05 prod.stone
 
-int heDub = (scs.getDisplayMode().getHeight())/2;
-
-    System.out.println(wiDub+" "+heDub);
-    
-        Dimension j = new Dimension().getSize();
-        Dimension p = new Dimension().getSize();
-        int jfw = Test.fw();
-        int jfh = Test.fh();
-        j.setSize(jfw, jfh);
-        System.out.println(jfw+" "+jfh);
-        System.out.println(j.width+" "+j.height);
-        
-        p.setSize(wiDub-(j.width/2), heDub-(j.height/2));
-        System.out.println(p.width+" "+p.height);
-      wei = p.width;
-      hei = p.height;
 */
