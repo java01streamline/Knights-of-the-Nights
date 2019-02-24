@@ -5,7 +5,7 @@ import gui.Main;
 public class KnightsOfTheNights {
 
     public static void main(String[] args) {
-        new Main().setVisible(true);
+            new Main().setVisible(true);
     }
     
 }
