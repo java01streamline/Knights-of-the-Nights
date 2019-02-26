@@ -10,6 +10,7 @@ import model.gui.main.Cell;
 import resources.images.ImageInstance;
 import service.gui.MainService;
 import service.gui.impl.MainServiceImpl;
+import territory.Territory;
 import thread.main.MainThread;
 
 /**
@@ -22,22 +23,15 @@ public class Main extends javax.swing.JFrame {
     public static Cell selectedCell = null;
     public static Cell selectedAction = null;
     private MainThread thread = new MainThread();
+    private Territory territory;
     
-    public Main() {
+    public Main(Territory territory) {
+        this.territory = territory;
         initComponents();
         this.setIconImage(ImageInstance.getDefault());
         mainService.mapInit(this.map);
         mainService.mapActions(buildings);
-        Cell rb = new Cell(ImageInstance.getResidentBuilding());
-        rb.updateImage(32, 32);
-        rb.setPreferredSize(new Dimension(32, 32));
-        rb.setBounds(0, 0, 32, 32);
-        rb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                selectedAction = (Cell)evt.getSource();
-            }
-        });
-        buildings.add(rb);
+        mainService.mapResources(resources, territory.getResources());
         thread.start();
     }
     

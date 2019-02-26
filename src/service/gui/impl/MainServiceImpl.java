@@ -2,10 +2,15 @@ package service.gui.impl;
 
 import gui.Main;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import javafx.util.Pair;
 import javax.swing.JPanel;
 import model.gui.main.Cell;
+import model.resources.Resources;
 import resources.images.ImageInstance;
 import service.gui.MainService;
 
@@ -65,6 +70,49 @@ public class MainServiceImpl implements MainService {
     @Override
     public void mapBuilding(JPanel map) {
         
+    }
+
+    @Override
+    public void mapResources(JPanel resourcesPanel, Resources resources) {
+        Cell cell;
+        HashMap<String, BufferedImage> resourcesIm = ImageInstance.getResources();
+        int  x = 0, y = 0;
+        for(Map.Entry<String, BufferedImage> pair : resourcesIm.entrySet()){
+            cell = new Cell(pair.getValue());
+            cell.updateImage(Cell.WIDTH/2, Cell.HEIGHT/2);
+            cell.setFont(new Font("Arial", Font.BOLD, 18));
+            cell.setText(resources.getResources().get(pair.getKey()).toString());
+            cell.setBounds(x*Cell.WIDTH/2, y*Cell.HEIGHT, resourcesPanel.getWidth(), Cell.HEIGHT/2);
+            resourcesPanel.add(cell);
+            if(x+Cell.WIDTH/2 > resourcesPanel.getWidth()){
+                x = 0;
+                y++;
+            }
+            y++;
+        }
+        /*for(int i = 0, x = 0, y = 0; i < resourcesIm.size(); i++){
+            cell = new Cell(resourcesIm.get(i));
+            cell.updateImage(Cell.WIDTH/2, Cell.HEIGHT/2);
+            
+            cell.setFont(new Font("Arial", Font.BOLD, 18));
+           
+            cell.setBounds(x*Cell.WIDTH/2, y*Cell.HEIGHT, resourcesPanel.getWidth(), Cell.HEIGHT/2);
+            
+            /*cell.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        Cell cell = (Cell) evt.getSource();
+                        Main.selectedAction = cell;
+                    }
+                });
+            
+            resourcesPanel.add(cell);
+            if(x+Cell.WIDTH/2 > resourcesPanel.getWidth()){
+                x = 0;
+                y++;
+            }
+            //x++;
+            y++;
+        }*/
     }
 
     
