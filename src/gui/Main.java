@@ -49,6 +49,8 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         map = new javax.swing.JPanel();
         actionsPanel = new javax.swing.JPanel();
         actions = new javax.swing.JTabbedPane();
@@ -58,8 +60,14 @@ public class Main extends javax.swing.JFrame {
 
         jButton1.setText("jButton1");
 
+        jButton2.setText("jButton2");
+
+        jButton3.setText("jButton3");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Knights of the Nights");
+        setMaximumSize(new java.awt.Dimension(1100, 662));
+        setMinimumSize(new java.awt.Dimension(1100, 662));
 
         map.setMaximumSize(new java.awt.Dimension(640, 640));
         map.setPreferredSize(new java.awt.Dimension(640, 640));
@@ -69,11 +77,11 @@ public class Main extends javax.swing.JFrame {
         buildings.setLayout(buildingsLayout);
         buildingsLayout.setHorizontalGroup(
             buildingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 192, Short.MAX_VALUE)
+            .addGap(0, 407, Short.MAX_VALUE)
         );
         buildingsLayout.setVerticalGroup(
             buildingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 554, Short.MAX_VALUE)
+            .addGap(0, 590, Short.MAX_VALUE)
         );
 
         actions.addTab("Buildings", buildings);
@@ -82,11 +90,11 @@ public class Main extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 192, Short.MAX_VALUE)
+            .addGap(0, 407, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 554, Short.MAX_VALUE)
+            .addGap(0, 590, Short.MAX_VALUE)
         );
 
         actions.addTab("tab2", jPanel2);
@@ -95,11 +103,11 @@ public class Main extends javax.swing.JFrame {
         resources.setLayout(resourcesLayout);
         resourcesLayout.setHorizontalGroup(
             resourcesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 192, Short.MAX_VALUE)
+            .addGap(0, 407, Short.MAX_VALUE)
         );
         resourcesLayout.setVerticalGroup(
             resourcesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 554, Short.MAX_VALUE)
+            .addGap(0, 590, Short.MAX_VALUE)
         );
 
         actions.addTab("Resources", resources);
@@ -138,10 +146,8 @@ public class Main extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(map, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(actionsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(36, 36, 36)))
+                    .addComponent(map, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(actionsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -155,6 +161,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel actionsPanel;
     private javax.swing.JPanel buildings;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel map;
     private javax.swing.JPanel resources;
