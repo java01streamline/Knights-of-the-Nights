@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package resources.images;
 
 import java.awt.image.BufferedImage;
@@ -13,10 +8,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
-/**
- *
- * @author User
- */
 public class ImageInstance {
     
     private static String bNames[] = {"tower","barrack","mill","residential_building"};
@@ -32,12 +23,20 @@ public class ImageInstance {
     };
     
     public static BufferedImage getDefault(){
+           int random_default = (int)(Math.random()*19+1);
+           if(random_default==5){random_default=1;}
+           if(random_default==6){random_default=2;}
+           if(random_default==7){random_default=3;}
+          System.out.println("[build_tera]: "+random_default);
+           
         try {
-            return ImageIO.read(ImageInstance.class.getResourceAsStream("default.jpg"));
+            if(random_default<=4){return ImageIO.read(ImageInstance.class.getResourceAsStream("defaults/default_"+random_default+".png"));}
+            else {return ImageIO.read(ImageInstance.class.getResourceAsStream("defaults/default.png"));}
         } catch (IOException ex) {
             Logger.getLogger(ImageInstance.class.getName()).log(Level.SEVERE, null, ex);
             throw new UnsupportedOperationException();
         }
+        
     }
     
     public static BufferedImage getResidentBuilding(){

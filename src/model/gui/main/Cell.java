@@ -5,10 +5,6 @@ import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-/**
- *
- * @author User
- */
 public class Cell extends JButton{
     public static final int WIDTH = 64;
     public static final int HEIGHT = 64;
@@ -16,6 +12,7 @@ public class Cell extends JButton{
 
     public Cell(BufferedImage im) {
         this.im = im;
+        this.setBorder(null);
         updateImage();
     }
 
