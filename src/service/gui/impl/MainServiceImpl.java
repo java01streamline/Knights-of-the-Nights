@@ -16,8 +16,8 @@ import service.gui.MainService;
 
 public class MainServiceImpl implements MainService {
 
-    private static final int ROWS = 10;
-    private static final int COLUMNS = 10;
+    private static final int ROWS = 20;
+    private static final int COLUMNS = 20;
 
     @Override
     public void mapInit(JPanel map) {
