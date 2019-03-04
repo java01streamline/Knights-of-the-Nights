@@ -24,14 +24,11 @@ public class ImageInstance {
     
     public static BufferedImage getDefault(){
            int random_default = (int)(Math.random()*19+1);
-           if(random_default==5){random_default=1;}
-           if(random_default==6){random_default=2;}
-           if(random_default==7){random_default=3;}
           System.out.println("[build_tera]: "+random_default);
            
         try {
-            if(random_default<=4){return ImageIO.read(ImageInstance.class.getResourceAsStream("defaults/default_"+random_default+".png"));}
-            else {return ImageIO.read(ImageInstance.class.getResourceAsStream("defaults/default.png"));}
+            if(random_default<=4){return ImageIO.read(ImageInstance.class.getResourceAsStream("defaults/dafault_"+random_default+".png"));}
+            else {return ImageIO.read(ImageInstance.class.getResourceAsStream("defaults/dafault.png"));}
         } catch (IOException ex) {
             Logger.getLogger(ImageInstance.class.getName()).log(Level.SEVERE, null, ex);
             throw new UnsupportedOperationException();
