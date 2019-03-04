@@ -23,7 +23,7 @@ public class ImageInstance {
     };
     
     public static BufferedImage getDefault(){
-           int random_default = (int)(Math.random()*19+1);
+           int random_default = (int)(Math.random()*20+1);
           System.out.println("[build_tera]: "+random_default);
            
         try {
