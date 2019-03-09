@@ -5,6 +5,8 @@
  */
 package zametki.frames;
 
+import territory.Territory;
+
 /**
  *
  * @author 2
@@ -16,6 +18,10 @@ public class test extends javax.swing.JFrame {
      */
     public test() {
         initComponents();
+    }
+
+    public test(Territory ter) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
