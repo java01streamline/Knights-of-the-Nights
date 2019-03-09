@@ -12,11 +12,27 @@ import model.resources.Resources;
  * @author 1
  */
 public class Territory {
+    int userId;
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
     private String name;
     int id;
     //int Trophies;
     private Resources resources;
     int age;
+
+    public Territory(int userId, String name, int id, Resources resources, int age) {
+        this.userId = userId;
+        this.name = name;
+        this.id = id;
+        this.resources = resources;
+        this.age = age;
+    }
 
     public Territory(String name, int id, Resources resources, int age) {
         this.name = name;

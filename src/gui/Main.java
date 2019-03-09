@@ -5,7 +5,6 @@
  */
 package gui;
 
-import java.awt.Dimension;
 import model.gui.main.Cell;
 import resources.images.ImageInstance;
 import service.gui.MainService;
