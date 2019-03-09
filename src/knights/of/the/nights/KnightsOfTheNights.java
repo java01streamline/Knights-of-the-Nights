@@ -20,6 +20,8 @@ public class KnightsOfTheNights {
     }
     
     private static void init(){
+        BuildingsView.initPairs();
+        
         ResourcesView.food = ResourcesImageLoader.getFood();
         ResourcesView.gold = ResourcesImageLoader.getGold();
         ResourcesView.iron = ResourcesImageLoader.getIron();

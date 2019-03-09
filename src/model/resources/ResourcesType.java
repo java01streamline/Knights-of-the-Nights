@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model.unit.building;
+package model.resources;
 
 /**
  *
- * @author User
+ * @author admin
  */
-public enum BuildingType {
-    ADMINISTRATION, PRODUCTION, MILITARY, SCIENTIFIC, TRADE, RESIDENTIAL
+public enum ResourcesType {
+    FOOD, GOLD, PEOPLE, SOLDIER, STONE, WATER, WOOD, IRON
 }

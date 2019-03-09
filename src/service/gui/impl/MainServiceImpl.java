@@ -45,15 +45,18 @@ public class MainServiceImpl implements MainService {
     @Override
     public void mapActions(JPanel actions) {
         Cell cell;
-        Field[] fiels = BuildingsView.class.getDeclaredFields();
-        for(int i = 0, x = 0, y = 0; i < fiels.length; i++){
+        Field[] fields = BuildingsView.class.getDeclaredFields();
+        for(int i = 0, x = 0, y = 0; i < fields.length; i++){
             try {
-                cell = new Cell((BufferedImage) fiels[i].get(BuildingsView.class));
+                if(!fields[i].get(BuildingsView.class).getClass().equals(BufferedImage.class)) continue;
+                cell = new Cell((BufferedImage) fields[i].get(BuildingsView.class));
+                //cell.setEntity(BuildingsView.pairs.get(y));
                 if(cell.getIm().getWidth()!=cell.WIDTH || cell.getIm().getHeight()!=cell.HEIGHT){
                     cell.updateImage(cell.WIDTH, cell.HEIGHT);
                 }
                 cell.setBounds(x*Cell.WIDTH, y*Cell.HEIGHT, Cell.WIDTH, Cell.HEIGHT);
                 cell.addActionListener(new java.awt.event.ActionListener() {
+                    @Override
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         Cell cell = (Cell) evt.getSource();
                         Main.selectedAction = cell;

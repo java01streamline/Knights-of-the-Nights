@@ -15,10 +15,8 @@ public abstract class Human extends Entity{
     private int satisfaction;
     protected CitizenType type;
 
-    public Human(String name, int health, int attack, int defense, int satisfaction) {
-        super(name, health, attack, defense);
-        this.satisfaction = satisfaction;
-        this.type = type;
+    public Human(String name, int level, int health, int attack, int defense, int price) {
+        super(name, level, health, attack, defense, price);
     }
 
     public int getSatisfaction() {

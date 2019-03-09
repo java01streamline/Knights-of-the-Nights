@@ -4,11 +4,21 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import model.unit.Entity;
 
 public class Cell extends JButton{
     public static final int WIDTH = 32;
     public static final int HEIGHT = 32;
     private BufferedImage im;
+    private Entity entity;
+
+    public Entity getEntity() {
+        return entity;
+    }
+
+    public void setEntity(Entity entity) {
+        this.entity = entity;
+    }
 
     public Cell(BufferedImage im) {
         this.im = im;

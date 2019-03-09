@@ -10,9 +10,9 @@ package model.unit.army;
  * @author 1
  */
 public class Soldier extends Human implements SoldierInterface{
-    
-    public Soldier(String name, int health, int attack, int defense, int satisfaction) {
-        super(name, health, attack, defense, satisfaction);
+
+    public Soldier(String name, int level, int health, int attack, int defense, int price) {
+        super(name, level, health, attack, defense, price);
     }
 
     @Override
