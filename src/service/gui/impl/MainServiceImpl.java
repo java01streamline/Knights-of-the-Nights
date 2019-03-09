@@ -49,8 +49,10 @@ public class MainServiceImpl implements MainService {
         for(int i = 0, x = 0, y = 0; i < fiels.length; i++){
             try {
                 cell = new Cell((BufferedImage) fiels[i].get(BuildingsView.class));
-                cell.updateImage(Cell.WIDTH/2, Cell.HEIGHT/2);
-                cell.setBounds(x*Cell.WIDTH/2, y*Cell.HEIGHT, Cell.WIDTH/2, Cell.HEIGHT/2);
+                if(cell.getIm().getWidth()!=cell.WIDTH || cell.getIm().getHeight()!=cell.HEIGHT){
+                    cell.updateImage(cell.WIDTH, cell.HEIGHT);
+                }
+                cell.setBounds(x*Cell.WIDTH, y*Cell.HEIGHT, Cell.WIDTH, Cell.HEIGHT);
                 cell.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         Cell cell = (Cell) evt.getSource();

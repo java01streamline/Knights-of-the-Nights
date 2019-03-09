@@ -26,7 +26,7 @@ public class Cell extends JButton{
     }
     
     public void updateImage(){
-        this.setIcon(new ImageIcon(im));
+        this.setIcon(new ImageIcon(im.getScaledInstance(WIDTH, HEIGHT, Image.SCALE_SMOOTH)));
     }
     
     public void updateImage(int width, int height){
