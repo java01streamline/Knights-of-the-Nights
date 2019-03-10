@@ -8,28 +8,26 @@ ID of all entities [123456]:
 
 materials:
 
-00 mefc
-01 wood
-02 stone
-03 metal
-04 steel
-05 diamond
-06 bone
-07 
-08 
-09 
-
-10 sand
-11 metal_dust
-12 silk
-13 leather
-14 wool
+00 wood
+01 stone
+02 metal
+03 steel
+04 bone
+05 diamonds
+06 coal
+07 brick
+08 clay
+09 marble
+10 
+11 
+12 
+13 
+14 
 15 
 16 
 17 
 18 
 19 
-
 20 
 21 
 22 
@@ -40,7 +38,6 @@ materials:
 27 
 28 
 29 
-
 30
 
 */

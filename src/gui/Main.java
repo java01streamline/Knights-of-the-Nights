@@ -1,23 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import model.gui.main.Cell;
 import resources.images.ImageInstance;
+import resources.images.ResourcesImageLoader;
 import service.gui.MainService;
 import service.gui.impl.MainServiceImpl;
 import territory.Territory;
 import thread.main.MainThread;
 
-/**
- *
- * @author User
- */
 public class Main extends javax.swing.JFrame {
-    
+    public static Main posrednic;
     private MainService mainService = new MainServiceImpl();
     public static Cell selectedCell = null;
     public static Cell selectedAction = null;
@@ -31,6 +25,7 @@ public class Main extends javax.swing.JFrame {
         mainService.mapInit(this.map);
         mainService.mapActions(buildings);
         thread.start();
+        this.posrednic = this;
     }
     
     public void createBuilding(Cell place, Cell selected){
@@ -38,9 +33,8 @@ public class Main extends javax.swing.JFrame {
     }
     
     public void slide_items(){
-        
-        
-        
+item_im_0.setIcon(new ImageIcon("C:\\Users\\1\\Documents\\NetBeansProjects\\Knights-of-the-Nights\\src\\resources\\images\\resources\\id_"+slider_item.getValue()+".png"));
+item_im_1.setIcon(new ImageIcon("C:\\Users\\1\\Documents\\NetBeansProjects\\Knights-of-the-Nights\\src\\resources\\images\\resources\\id_"+(slider_item.getValue()+1)+".png"));
     }
 
     @SuppressWarnings("unchecked")
@@ -50,7 +44,7 @@ public class Main extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        actions10 = new javax.swing.JTabbedPane();
+        actions = new javax.swing.JTabbedPane();
         buildings = new javax.swing.JPanel();
         livers = new javax.swing.JPanel();
         resources = new javax.swing.JPanel();
@@ -64,10 +58,10 @@ public class Main extends javax.swing.JFrame {
         item_im_7 = new javax.swing.JButton();
         item_im_8 = new javax.swing.JButton();
         item_im_9 = new javax.swing.JButton();
+        slider_item = new javax.swing.JSlider();
         map = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        slider_item = new javax.swing.JSlider();
 
         jButton1.setText("jButton1");
 
@@ -80,9 +74,9 @@ public class Main extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(1100, 662));
         setMinimumSize(new java.awt.Dimension(1100, 662));
 
-        actions10.setMaximumSize(new java.awt.Dimension(380, 185));
-        actions10.setMinimumSize(new java.awt.Dimension(380, 185));
-        actions10.setPreferredSize(new java.awt.Dimension(380, 185));
+        actions.setMaximumSize(new java.awt.Dimension(380, 185));
+        actions.setMinimumSize(new java.awt.Dimension(380, 185));
+        actions.setPreferredSize(new java.awt.Dimension(380, 185));
 
         javax.swing.GroupLayout buildingsLayout = new javax.swing.GroupLayout(buildings);
         buildings.setLayout(buildingsLayout);
@@ -92,10 +86,10 @@ public class Main extends javax.swing.JFrame {
         );
         buildingsLayout.setVerticalGroup(
             buildingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 157, Short.MAX_VALUE)
+            .addGap(0, 203, Short.MAX_VALUE)
         );
 
-        actions10.addTab("Buildings", buildings);
+        actions.addTab("Buildings", buildings);
 
         javax.swing.GroupLayout liversLayout = new javax.swing.GroupLayout(livers);
         livers.setLayout(liversLayout);
@@ -105,10 +99,10 @@ public class Main extends javax.swing.JFrame {
         );
         liversLayout.setVerticalGroup(
             liversLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 157, Short.MAX_VALUE)
+            .addGap(0, 203, Short.MAX_VALUE)
         );
 
-        actions10.addTab("livers", livers);
+        actions.addTab("livers", livers);
 
         item_im_0.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED)));
         item_im_0.setContentAreaFilled(false);
@@ -170,14 +164,34 @@ public class Main extends javax.swing.JFrame {
         item_im_9.setMinimumSize(new java.awt.Dimension(64, 64));
         item_im_9.setPreferredSize(new java.awt.Dimension(64, 64));
 
+        slider_item.setMaximum(10);
+        slider_item.setPaintTicks(true);
+        slider_item.setValue(0);
+        slider_item.setMaximumSize(new java.awt.Dimension(356, 40));
+        slider_item.setMinimumSize(new java.awt.Dimension(356, 40));
+        slider_item.setOpaque(false);
+        slider_item.setPreferredSize(new java.awt.Dimension(356, 40));
+        slider_item.setRequestFocusEnabled(false);
+        slider_item.setVerifyInputWhenFocusTarget(false);
+
         javax.swing.GroupLayout resourcesLayout = new javax.swing.GroupLayout(resources);
         resources.setLayout(resourcesLayout);
         resourcesLayout.setHorizontalGroup(
             resourcesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(resourcesLayout.createSequentialGroup()
-                .addGroup(resourcesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(6, 6, 6)
+                .addGroup(resourcesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(resourcesLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
+                        .addComponent(item_im_5, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(item_im_6, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(item_im_7, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(item_im_8, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(item_im_9, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(resourcesLayout.createSequentialGroup()
                         .addComponent(item_im_0, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(item_im_1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -187,17 +201,7 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(item_im_3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(item_im_4, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(resourcesLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(item_im_9, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(item_im_5, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(item_im_6, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(item_im_7, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(item_im_8, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(slider_item, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         resourcesLayout.setVerticalGroup(
@@ -212,15 +216,17 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(item_im_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(resourcesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(item_im_9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(item_im_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(item_im_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(item_im_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(item_im_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(item_im_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(item_im_9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(slider_item, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        actions10.addTab("Resources", resources);
+        actions.addTab("Resources", resources);
 
         map.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED), javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED)));
         map.setMaximumSize(new java.awt.Dimension(640, 640));
@@ -251,28 +257,17 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 332, Short.MAX_VALUE))
         );
 
-        slider_item.setPaintTicks(true);
-        slider_item.setValue(0);
-        slider_item.setMaximumSize(new java.awt.Dimension(356, 40));
-        slider_item.setMinimumSize(new java.awt.Dimension(356, 40));
-        slider_item.setOpaque(false);
-        slider_item.setPreferredSize(new java.awt.Dimension(356, 40));
-        slider_item.setRequestFocusEnabled(false);
-        slider_item.setVerifyInputWhenFocusTarget(false);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(map, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(actions10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(slider_item, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(64, Short.MAX_VALUE))
+                    .addComponent(actions, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -281,9 +276,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(map, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(actions10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(slider_item, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(actions, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -293,7 +286,7 @@ public class Main extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTabbedPane actions10;
+    private javax.swing.JTabbedPane actions;
     private javax.swing.JPanel buildings;
     private javax.swing.JButton item_im_0;
     private javax.swing.JButton item_im_1;
