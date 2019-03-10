@@ -30,7 +30,6 @@ public class Main extends javax.swing.JFrame {
         this.setIconImage(ImageInstance.getDefault());
         mainService.mapInit(this.map);
         mainService.mapActions(buildings);
-       mainService.mapResources(resources, territory.getResources()); //here
         thread.start();
     }
     
@@ -39,8 +38,9 @@ public class Main extends javax.swing.JFrame {
     }
     
     public void slide_items(){
-        item_im_1.setIcon("df"+(int)(slider_item.getValue())+".png");//here
-    
+        
+        
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -54,20 +54,20 @@ public class Main extends javax.swing.JFrame {
         buildings = new javax.swing.JPanel();
         livers = new javax.swing.JPanel();
         resources = new javax.swing.JPanel();
-        item_lore_1 = new javax.swing.JLabel();
+        item_im_0 = new javax.swing.JButton();
         item_im_1 = new javax.swing.JButton();
-        item_lore_2 = new javax.swing.JLabel();
         item_im_2 = new javax.swing.JButton();
         item_im_3 = new javax.swing.JButton();
-        item_lore_3 = new javax.swing.JLabel();
         item_im_4 = new javax.swing.JButton();
-        item_lore_4 = new javax.swing.JLabel();
         item_im_5 = new javax.swing.JButton();
-        item_lore_5 = new javax.swing.JLabel();
-        slider_item = new javax.swing.JSlider();
+        item_im_6 = new javax.swing.JButton();
+        item_im_7 = new javax.swing.JButton();
+        item_im_8 = new javax.swing.JButton();
+        item_im_9 = new javax.swing.JButton();
         map = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        slider_item = new javax.swing.JSlider();
 
         jButton1.setText("jButton1");
 
@@ -80,19 +80,19 @@ public class Main extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(1100, 662));
         setMinimumSize(new java.awt.Dimension(1100, 662));
 
-        actions10.setMaximumSize(new java.awt.Dimension(373, 392));
-        actions10.setMinimumSize(new java.awt.Dimension(373, 392));
-        actions10.setPreferredSize(new java.awt.Dimension(373, 392));
+        actions10.setMaximumSize(new java.awt.Dimension(380, 185));
+        actions10.setMinimumSize(new java.awt.Dimension(380, 185));
+        actions10.setPreferredSize(new java.awt.Dimension(380, 185));
 
         javax.swing.GroupLayout buildingsLayout = new javax.swing.GroupLayout(buildings);
         buildings.setLayout(buildingsLayout);
         buildingsLayout.setHorizontalGroup(
             buildingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
+            .addGap(0, 375, Short.MAX_VALUE)
         );
         buildingsLayout.setVerticalGroup(
             buildingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 364, Short.MAX_VALUE)
+            .addGap(0, 157, Short.MAX_VALUE)
         );
 
         actions10.addTab("Buildings", buildings);
@@ -101,32 +101,26 @@ public class Main extends javax.swing.JFrame {
         livers.setLayout(liversLayout);
         liversLayout.setHorizontalGroup(
             liversLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
+            .addGap(0, 375, Short.MAX_VALUE)
         );
         liversLayout.setVerticalGroup(
             liversLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 364, Short.MAX_VALUE)
+            .addGap(0, 157, Short.MAX_VALUE)
         );
 
         actions10.addTab("livers", livers);
 
-        item_lore_1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        item_lore_1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        item_lore_1.setMaximumSize(new java.awt.Dimension(300, 64));
-        item_lore_1.setMinimumSize(new java.awt.Dimension(300, 64));
-        item_lore_1.setPreferredSize(new java.awt.Dimension(300, 64));
+        item_im_0.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED)));
+        item_im_0.setContentAreaFilled(false);
+        item_im_0.setMaximumSize(new java.awt.Dimension(64, 64));
+        item_im_0.setMinimumSize(new java.awt.Dimension(64, 64));
+        item_im_0.setPreferredSize(new java.awt.Dimension(64, 64));
 
         item_im_1.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED)));
         item_im_1.setContentAreaFilled(false);
         item_im_1.setMaximumSize(new java.awt.Dimension(64, 64));
         item_im_1.setMinimumSize(new java.awt.Dimension(64, 64));
         item_im_1.setPreferredSize(new java.awt.Dimension(64, 64));
-
-        item_lore_2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        item_lore_2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        item_lore_2.setMaximumSize(new java.awt.Dimension(300, 64));
-        item_lore_2.setMinimumSize(new java.awt.Dimension(300, 64));
-        item_lore_2.setPreferredSize(new java.awt.Dimension(300, 64));
 
         item_im_2.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED)));
         item_im_2.setContentAreaFilled(false);
@@ -140,23 +134,11 @@ public class Main extends javax.swing.JFrame {
         item_im_3.setMinimumSize(new java.awt.Dimension(64, 64));
         item_im_3.setPreferredSize(new java.awt.Dimension(64, 64));
 
-        item_lore_3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        item_lore_3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        item_lore_3.setMaximumSize(new java.awt.Dimension(300, 64));
-        item_lore_3.setMinimumSize(new java.awt.Dimension(300, 64));
-        item_lore_3.setPreferredSize(new java.awt.Dimension(300, 64));
-
         item_im_4.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED)));
         item_im_4.setContentAreaFilled(false);
         item_im_4.setMaximumSize(new java.awt.Dimension(64, 64));
         item_im_4.setMinimumSize(new java.awt.Dimension(64, 64));
         item_im_4.setPreferredSize(new java.awt.Dimension(64, 64));
-
-        item_lore_4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        item_lore_4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        item_lore_4.setMaximumSize(new java.awt.Dimension(300, 64));
-        item_lore_4.setMinimumSize(new java.awt.Dimension(300, 64));
-        item_lore_4.setPreferredSize(new java.awt.Dimension(300, 64));
 
         item_im_5.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED)));
         item_im_5.setContentAreaFilled(false);
@@ -164,82 +146,78 @@ public class Main extends javax.swing.JFrame {
         item_im_5.setMinimumSize(new java.awt.Dimension(64, 64));
         item_im_5.setPreferredSize(new java.awt.Dimension(64, 64));
 
-        item_lore_5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        item_lore_5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        item_lore_5.setMaximumSize(new java.awt.Dimension(300, 64));
-        item_lore_5.setMinimumSize(new java.awt.Dimension(300, 64));
-        item_lore_5.setPreferredSize(new java.awt.Dimension(300, 64));
+        item_im_6.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED)));
+        item_im_6.setContentAreaFilled(false);
+        item_im_6.setMaximumSize(new java.awt.Dimension(64, 64));
+        item_im_6.setMinimumSize(new java.awt.Dimension(64, 64));
+        item_im_6.setPreferredSize(new java.awt.Dimension(64, 64));
 
-        slider_item.setMaximum(10);
-        slider_item.setOrientation(javax.swing.JSlider.VERTICAL);
-        slider_item.setPaintTrack(false);
-        slider_item.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        slider_item.setMaximumSize(new java.awt.Dimension(20, 344));
-        slider_item.setMinimumSize(new java.awt.Dimension(20, 344));
-        slider_item.setOpaque(false);
-        slider_item.setPreferredSize(new java.awt.Dimension(20, 344));
-        slider_item.setRequestFocusEnabled(false);
-        slider_item.setVerifyInputWhenFocusTarget(false);
+        item_im_7.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED)));
+        item_im_7.setContentAreaFilled(false);
+        item_im_7.setMaximumSize(new java.awt.Dimension(64, 64));
+        item_im_7.setMinimumSize(new java.awt.Dimension(64, 64));
+        item_im_7.setPreferredSize(new java.awt.Dimension(64, 64));
+
+        item_im_8.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED)));
+        item_im_8.setContentAreaFilled(false);
+        item_im_8.setMaximumSize(new java.awt.Dimension(64, 64));
+        item_im_8.setMinimumSize(new java.awt.Dimension(64, 64));
+        item_im_8.setPreferredSize(new java.awt.Dimension(64, 64));
+
+        item_im_9.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED)));
+        item_im_9.setContentAreaFilled(false);
+        item_im_9.setMaximumSize(new java.awt.Dimension(64, 64));
+        item_im_9.setMinimumSize(new java.awt.Dimension(64, 64));
+        item_im_9.setPreferredSize(new java.awt.Dimension(64, 64));
 
         javax.swing.GroupLayout resourcesLayout = new javax.swing.GroupLayout(resources);
         resources.setLayout(resourcesLayout);
         resourcesLayout.setHorizontalGroup(
             resourcesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(resourcesLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(resourcesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(resourcesLayout.createSequentialGroup()
-                        .addComponent(item_im_4, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(item_im_0, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(item_lore_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(resourcesLayout.createSequentialGroup()
-                        .addComponent(item_im_5, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(item_lore_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(resourcesLayout.createSequentialGroup()
                         .addComponent(item_im_1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(item_lore_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(resourcesLayout.createSequentialGroup()
                         .addComponent(item_im_2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(item_lore_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(resourcesLayout.createSequentialGroup()
                         .addComponent(item_im_3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(item_lore_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(slider_item, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                        .addComponent(item_im_4, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(resourcesLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(item_im_9, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(item_im_5, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(item_im_6, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(item_im_7, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(item_im_8, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         resourcesLayout.setVerticalGroup(
             resourcesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(resourcesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(resourcesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(resourcesLayout.createSequentialGroup()
-                        .addGroup(resourcesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(item_im_1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(item_lore_1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(resourcesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(item_im_2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(item_lore_2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(resourcesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(item_im_3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(item_lore_3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(resourcesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(item_im_4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(item_lore_4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(resourcesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(item_im_5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(item_lore_5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(slider_item, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(item_im_0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(item_im_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(item_im_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(item_im_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(item_im_4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(resourcesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(item_im_9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(item_im_5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(item_im_6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(item_im_7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(item_im_8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         actions10.addTab("Resources", resources);
@@ -270,8 +248,17 @@ public class Main extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 332, Short.MAX_VALUE))
         );
+
+        slider_item.setPaintTicks(true);
+        slider_item.setValue(0);
+        slider_item.setMaximumSize(new java.awt.Dimension(356, 40));
+        slider_item.setMinimumSize(new java.awt.Dimension(356, 40));
+        slider_item.setOpaque(false);
+        slider_item.setPreferredSize(new java.awt.Dimension(356, 40));
+        slider_item.setRequestFocusEnabled(false);
+        slider_item.setVerifyInputWhenFocusTarget(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -281,21 +268,24 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(map, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(actions10, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(actions10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(slider_item, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addContainerGap(64, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(map, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(actions10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, Short.MAX_VALUE)))
+                        .addComponent(slider_item, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -304,72 +294,25 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane actions10;
-    private javax.swing.JTabbedPane actions3;
-    private javax.swing.JTabbedPane actions4;
-    private javax.swing.JTabbedPane actions5;
-    private javax.swing.JTabbedPane actions6;
-    private javax.swing.JTabbedPane actions7;
-    private javax.swing.JTabbedPane actions8;
-    private javax.swing.JTabbedPane actions9;
     private javax.swing.JPanel buildings;
-    private javax.swing.JPanel buildings3;
-    private javax.swing.JPanel buildings4;
-    private javax.swing.JPanel buildings5;
-    private javax.swing.JPanel buildings6;
+    private javax.swing.JButton item_im_0;
     private javax.swing.JButton item_im_1;
     private javax.swing.JButton item_im_2;
     private javax.swing.JButton item_im_3;
     private javax.swing.JButton item_im_4;
     private javax.swing.JButton item_im_5;
-    private javax.swing.JButton item_image_1;
-    private javax.swing.JButton item_image_10;
-    private javax.swing.JButton item_image_11;
-    private javax.swing.JButton item_image_12;
-    private javax.swing.JButton item_image_13;
-    private javax.swing.JButton item_image_14;
-    private javax.swing.JButton item_image_15;
-    private javax.swing.JButton item_image_2;
-    private javax.swing.JButton item_image_3;
-    private javax.swing.JButton item_image_4;
-    private javax.swing.JButton item_image_5;
-    private javax.swing.JButton item_image_6;
-    private javax.swing.JButton item_image_7;
-    private javax.swing.JButton item_image_8;
-    private javax.swing.JButton item_image_9;
-    private javax.swing.JLabel item_lore_1;
-    private javax.swing.JLabel item_lore_2;
-    private javax.swing.JLabel item_lore_3;
-    private javax.swing.JLabel item_lore_4;
-    private javax.swing.JLabel item_lore_5;
-    private javax.swing.JLabel item_lore_pull_1;
-    private javax.swing.JLabel item_lore_pull_10;
-    private javax.swing.JLabel item_lore_pull_11;
-    private javax.swing.JLabel item_lore_pull_12;
-    private javax.swing.JLabel item_lore_pull_13;
-    private javax.swing.JLabel item_lore_pull_14;
-    private javax.swing.JLabel item_lore_pull_15;
-    private javax.swing.JLabel item_lore_pull_2;
-    private javax.swing.JLabel item_lore_pull_3;
-    private javax.swing.JLabel item_lore_pull_4;
-    private javax.swing.JLabel item_lore_pull_5;
-    private javax.swing.JLabel item_lore_pull_6;
-    private javax.swing.JLabel item_lore_pull_7;
-    private javax.swing.JLabel item_lore_pull_8;
-    private javax.swing.JLabel item_lore_pull_9;
+    private javax.swing.JButton item_im_6;
+    private javax.swing.JButton item_im_7;
+    private javax.swing.JButton item_im_8;
+    private javax.swing.JButton item_im_9;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollBar jScrollBar1;
-    private javax.swing.JScrollBar jScrollBar2;
-    private javax.swing.JScrollBar jScrollBar3;
     private javax.swing.JPanel livers;
     private javax.swing.JPanel map;
     private javax.swing.JPanel resources;
-    private javax.swing.JPanel resources1;
-    private javax.swing.JPanel resources2;
-    private javax.swing.JPanel resources3;
     private javax.swing.JSlider slider_item;
     // End of variables declaration//GEN-END:variables
 }
