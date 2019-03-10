@@ -1,4 +1,4 @@
-package model.unit.building;
+package model.unit.buildings;
 
 public interface iterMILITARY {
     

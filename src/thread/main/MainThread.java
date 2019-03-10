@@ -15,6 +15,7 @@ public class MainThread extends Thread{
     public void run() {
         while(true){
             if(Main.selectedCell != null && Main.selectedAction != null){
+                
                 Main.selectedCell.setIm(Main.selectedAction.getIm());
                 Main.selectedAction = null;
                 Main.selectedCell = null;

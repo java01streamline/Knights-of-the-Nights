@@ -5,18 +5,48 @@
  */
 package territory;
 
+import java.util.ArrayList;
 import model.resources.Resources;
+import model.unit.army.Human;
+import model.unit.buildings.Building;
 
 /**
  *
  * @author 1
  */
 public class Territory {
+    private int userId;
     private String name;
-    int id;
+    private int id;
     //int Trophies;
     private Resources resources;
-    int age;
+    private int age;
+    private ArrayList<Building> buildings;
+    private ArrayList<Human> humans;
+
+    public ArrayList<Building> getBuildings() {
+        return buildings;
+    }
+
+    public void setBuildings(ArrayList<Building> buildings) {
+        this.buildings = buildings;
+    }
+
+    public ArrayList<Human> getHumans() {
+        return humans;
+    }
+
+    public void setHumans(ArrayList<Human> humans) {
+        this.humans = humans;
+    }
+
+    public Territory(int userId, String name, int id, Resources resources, int age) {
+        this.userId = userId;
+        this.name = name;
+        this.id = id;
+        this.resources = resources;
+        this.age = age;
+    }
 
     public Territory(String name, int id, Resources resources, int age) {
         this.name = name;
@@ -25,6 +55,14 @@ public class Territory {
         this.age = age;
     }
 
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+    
     public String getName() {
         return name;
     }

@@ -12,9 +12,9 @@ import model.gui.main.Cell;
  * @author 1
  */
 public class Worker extends Human implements WorkerInterface{
-    
-    public Worker(String name, int health, int attack, int defense, int satisfaction) {
-        super(name, health, attack, defense, satisfaction);
+
+    public Worker(String name, int level, int health, int attack, int defense, int price) {
+        super(name, level, health, attack, defense, price);
         this.type = CitizenType.WORKER;
     }
 

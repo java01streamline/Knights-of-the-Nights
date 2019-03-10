@@ -1,13 +1,16 @@
 package service.gui.impl;
 
+import common.BuildingsView;
 import gui.Main;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.image.BufferedImage;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import javafx.util.Pair;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JPanel;
 import model.gui.main.Cell;
 import model.resources.Resources;
@@ -42,23 +45,34 @@ public class MainServiceImpl implements MainService {
     @Override
     public void mapActions(JPanel actions) {
         Cell cell;
-        ArrayList<BufferedImage> buildings = ImageInstance.getBuildings();
-        for(int i = 0, x = 0, y = 0; i < buildings.size(); i++){
-            cell = new Cell(buildings.get(i));
-            cell.updateImage(Cell.WIDTH/2, Cell.HEIGHT/2);
-            cell.setBounds(x*Cell.WIDTH/2, y*Cell.HEIGHT, Cell.WIDTH/2, Cell.HEIGHT/2);
-            cell.addActionListener(new java.awt.event.ActionListener() {
+        Field[] fields = BuildingsView.class.getDeclaredFields();
+        for(int i = 0, x = 0, y = 0; i < fields.length; i++){
+            try {
+                if(!fields[i].get(BuildingsView.class).getClass().equals(BufferedImage.class)) continue;
+                cell = new Cell((BufferedImage) fields[i].get(BuildingsView.class));
+                //cell.setEntity(BuildingsView.pairs.get(y));
+                if(cell.getIm().getWidth()!=cell.WIDTH || cell.getIm().getHeight()!=cell.HEIGHT){
+                    cell.updateImage(cell.WIDTH, cell.HEIGHT);
+                }
+                cell.setBounds(x*Cell.WIDTH, y*Cell.HEIGHT, Cell.WIDTH, Cell.HEIGHT);
+                cell.addActionListener(new java.awt.event.ActionListener() {
+                    @Override
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         Cell cell = (Cell) evt.getSource();
                         Main.selectedAction = cell;
                     }
                 });
-            actions.add(cell);
-            if(x+Cell.WIDTH/2 > actions.getWidth()){
-                x = 0;
-                y++;
+                actions.add(cell);
+                if(x+Cell.WIDTH/2 > actions.getWidth()){
+                    x = 0;
+                    y++;
+                }
+                x++;
+            } catch (IllegalArgumentException ex) {
+                Logger.getLogger(MainServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IllegalAccessException ex) {
+                Logger.getLogger(MainServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
             }
-            x++;
         }
     }
 
@@ -117,3 +131,25 @@ public class MainServiceImpl implements MainService {
 
     
 }
+
+/*
+Cell cell;
+        ArrayList<BufferedImage> buildings = ImageInstance.getBuildings();
+        for(int i = 0, x = 0, y = 0; i < buildings.size(); i++){
+            cell = new Cell(buildings.get(i));
+            cell.updateImage(Cell.WIDTH/2, Cell.HEIGHT/2);
+            cell.setBounds(x*Cell.WIDTH/2, y*Cell.HEIGHT, Cell.WIDTH/2, Cell.HEIGHT/2);
+            cell.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        Cell cell = (Cell) evt.getSource();
+                        Main.selectedAction = cell;
+                    }
+                });
+            actions.add(cell);
+            if(x+Cell.WIDTH/2 > actions.getWidth()){
+                x = 0;
+                y++;
+            }
+            x++;
+        }
+*/
