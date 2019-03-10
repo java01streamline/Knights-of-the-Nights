@@ -18,7 +18,6 @@ import resources.images.BuildingsImageLoader;
 public class BuildingsView {
     public static HashMap<Class, BufferedImage> pairs;
     
-    
     public static BufferedImage tower;
     public static BufferedImage barrack;
     public static BufferedImage mill;

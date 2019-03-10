@@ -11,13 +11,14 @@ import territory.Territory;
 import thread.main.MainThread;
 
 public class Main extends javax.swing.JFrame {
+
     public static Main posrednic;
     private MainService mainService = new MainServiceImpl();
     public static Cell selectedCell = null;
     public static Cell selectedAction = null;
     private MainThread thread = new MainThread();
     private Territory territory;
-    
+
     public Main(Territory territory) {
         this.territory = territory;
         initComponents();
@@ -28,13 +29,17 @@ public class Main extends javax.swing.JFrame {
         this.posrednic = this;
     }
     
-    public void createBuilding(Cell place, Cell selected){
+    public Territory getTerritory(){
+        return territory;
+    }
+
+    public void createBuilding(Cell place, Cell selected) {
         mainService.setImage(place, selected);
     }
-    
-    public void slide_items(){
-item_im_0.setIcon(new ImageIcon("C:\\Users\\1\\Documents\\NetBeansProjects\\Knights-of-the-Nights\\src\\resources\\images\\resources\\id_"+slider_item.getValue()+".png"));
-item_im_1.setIcon(new ImageIcon("C:\\Users\\1\\Documents\\NetBeansProjects\\Knights-of-the-Nights\\src\\resources\\images\\resources\\id_"+(slider_item.getValue()+1)+".png"));
+
+    public void slide_items() {
+        item_im_0.setIcon(new ImageIcon("C:\\Users\\1\\Documents\\NetBeansProjects\\Knights-of-the-Nights\\src\\resources\\images\\resources\\id_" + slider_item.getValue() + ".png"));
+        item_im_1.setIcon(new ImageIcon("C:\\Users\\1\\Documents\\NetBeansProjects\\Knights-of-the-Nights\\src\\resources\\images\\resources\\id_" + (slider_item.getValue() + 1) + ".png"));
     }
 
     @SuppressWarnings("unchecked")

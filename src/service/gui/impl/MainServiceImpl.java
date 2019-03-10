@@ -14,6 +14,8 @@ import java.util.logging.Logger;
 import javax.swing.JPanel;
 import model.gui.main.Cell;
 import model.resources.Resources;
+import model.unit.Entity;
+import model.unit.buildings.impl.MillImpl;
 import resources.images.ImageInstance;
 import service.gui.MainService;
 
@@ -45,17 +47,12 @@ public class MainServiceImpl implements MainService {
     @Override
     public void mapActions(JPanel actions) {
         Cell cell;
-        Field[] fields = BuildingsView.class.getDeclaredFields();
-        for(int i = 0, x = 0, y = 0; i < fields.length; i++){
-            try {
-                if(!fields[i].get(BuildingsView.class).getClass().equals(BufferedImage.class)) continue;
-                cell = new Cell((BufferedImage) fields[i].get(BuildingsView.class));
-                //cell.setEntity(BuildingsView.pairs.get(y));
-                if(cell.getIm().getWidth()!=cell.WIDTH || cell.getIm().getHeight()!=cell.HEIGHT){
-                    cell.updateImage(cell.WIDTH, cell.HEIGHT);
-                }
-                cell.setBounds(x*Cell.WIDTH, y*Cell.HEIGHT, Cell.WIDTH, Cell.HEIGHT);
-                cell.addActionListener(new java.awt.event.ActionListener() {
+        int x = 0, y = 0;
+        for(HashMap.Entry<Class, BufferedImage> item : BuildingsView.pairs.entrySet()){
+            cell = new Cell(item.getValue());
+            cell.setEntity(createEntity(item.getKey()));
+            cell.setBounds(x*Cell.WIDTH, y*Cell.HEIGHT, Cell.WIDTH, Cell.HEIGHT);
+            cell.addActionListener(new java.awt.event.ActionListener() {
                     @Override
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         Cell cell = (Cell) evt.getSource();
@@ -68,12 +65,17 @@ public class MainServiceImpl implements MainService {
                     y++;
                 }
                 x++;
-            } catch (IllegalArgumentException ex) {
-                Logger.getLogger(MainServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IllegalAccessException ex) {
-                Logger.getLogger(MainServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
+    }
+    //this method create Entity by name of class
+    //it is may be Building or Human
+    private Entity createEntity(Class c){
+        try {
+            return (Entity) Class.forName(c.getName()).newInstance();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
+            Logger.getLogger(MainServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
 
     @Override
@@ -151,5 +153,39 @@ Cell cell;
                 y++;
             }
             x++;
+        }
+*/
+
+/*
+Cell cell;
+        Field[] fields = BuildingsView.class.getDeclaredFields();
+        for(int i = 0, x = 0, y = 0; i < fields.length; i++){
+            try {
+                if(!fields[i].get(BuildingsView.class).getClass().equals(BufferedImage.class)) continue;
+                cell = new Cell((BufferedImage) fields[i].get(BuildingsView.class));
+                //cell.setEntity(BuildingsView.pairs.get(y));
+                if(cell.getIm().getWidth()!=cell.WIDTH || cell.getIm().getHeight()!=cell.HEIGHT){
+                    cell.updateImage(cell.WIDTH, cell.HEIGHT);
+                }
+                cell.setEntity(new MillImpl());
+                cell.setBounds(x*Cell.WIDTH, y*Cell.HEIGHT, Cell.WIDTH, Cell.HEIGHT);
+                cell.addActionListener(new java.awt.event.ActionListener() {
+                    @Override
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        Cell cell = (Cell) evt.getSource();
+                        Main.selectedAction = cell;
+                    }
+                });
+                actions.add(cell);
+                if(x+Cell.WIDTH/2 > actions.getWidth()){
+                    x = 0;
+                    y++;
+                }
+                x++;
+            } catch (IllegalArgumentException ex) {
+                Logger.getLogger(MainServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IllegalAccessException ex) {
+                Logger.getLogger(MainServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 */

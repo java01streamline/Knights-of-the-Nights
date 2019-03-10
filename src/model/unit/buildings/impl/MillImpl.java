@@ -17,7 +17,7 @@ import model.unit.buildings.ProductionBuildingsType;
  *
  * @author admin
  */
-public class MillImpl extends Production {
+public final class MillImpl extends Production {
 
     public MillImpl() {
         super(
@@ -26,8 +26,8 @@ public class MillImpl extends Production {
                 ProductionBuildingsType.MILL.getAttack(),
                 ProductionBuildingsType.MILL.getDefense(),
                 ProductionBuildingsType.MILL,
-                ProductionBuildingsType.MILL.getPrice(),
-                ProductionBuildingsType.MILL.getLevel());
+                ProductionBuildingsType.MILL.getLevel(),
+                ProductionBuildingsType.MILL.getPrice());
     }
 
     @Override
