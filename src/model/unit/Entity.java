@@ -15,6 +15,7 @@ public abstract class Entity {
         this.attack = attack;
         this.defense = defense;
         this.price = price;
+        System.out.println("From Entity: "+this.level);
     }
     
     public int getLevel() {

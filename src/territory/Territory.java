@@ -21,8 +21,8 @@ public class Territory {
     //int Trophies;
     private Resources resources;
     private int age;
-    private ArrayList<Building> buildings;
-    private ArrayList<Human> humans;
+    private ArrayList<Building> buildings = new ArrayList<>();
+    private ArrayList<Human> humans = new ArrayList<>();
 
     public ArrayList<Building> getBuildings() {
         return buildings;

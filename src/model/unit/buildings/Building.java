@@ -7,7 +7,7 @@ public abstract class Building extends Entity{
     private BuildingsInterface type;
 
     public Building(String name, int health, int attack, int defense, BuildingsInterface type, int price, int level) {
-        super(name, health, attack, defense, price, level);
+        super(name, level, health, attack, defense, price);
         this.type = type;
     }
 

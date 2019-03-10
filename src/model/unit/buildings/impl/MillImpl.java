@@ -26,8 +26,8 @@ public final class MillImpl extends Production {
                 ProductionBuildingsType.MILL.getAttack(),
                 ProductionBuildingsType.MILL.getDefense(),
                 ProductionBuildingsType.MILL,
-                ProductionBuildingsType.MILL.getLevel(),
-                ProductionBuildingsType.MILL.getPrice());
+                ProductionBuildingsType.MILL.getPrice(),
+                ProductionBuildingsType.MILL.getLevel());
     }
 
     @Override
