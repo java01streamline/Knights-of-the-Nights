@@ -1,0 +1,60 @@
+00 wood_oak
+01 wood_cherry
+02 wood_birch
+03 wood_spruce
+04  
+
+05 stone_basick
+06 stone_granite
+07 stone_sandy
+08 stone_flint
+09 
+
+10 metal_cooper
+11 metal_gold
+13 metal_iron
+14 metal_steel
+15 
+
+16 dirt_dirt
+17 dirt_sand
+18 dirt_ash
+19 dirt_clay
+20  
+
+21 bioa_bone
+22 bioa_leather
+23 bioa_wool
+24 bioa_silk
+25 
+
+26 jewel_diamond
+27 jewel_quartz
+28 jewel_flint
+29 jewel_pearl
+30 jevel_obsidian
+
+31 coal_stone
+32 coal_wood
+33 coal_enrgy
+34 
+35 
+
+36 liquid_water
+37 liquid_lava
+38 liquid_milk
+39 
+40 
+
+41 material_brick
+42 material_glass
+43 material_plete
+44 material_head
+45 material_balk
+
+46 
+47 
+48 
+49 
+50 
+
