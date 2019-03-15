@@ -1,0 +1,13 @@
+ID [all] {12345678}:
+[1] - level of entity (lvl 1 minimum)
+[2] - type
+[3] - image now
+[4] - antitude to you
+[5,6] - conc type
+[7,8] - material
+
+tests:{
+ID [item] : 10a000bc >>> that is( [level_1][item][now_image_{a}][antitude_to_you_none][concret_type_none][material_{bc}] )
+ID [human] : 11a143bc >>> 
+
+}
