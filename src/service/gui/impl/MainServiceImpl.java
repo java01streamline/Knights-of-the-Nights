@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 import model.gui.main.Cell;
 import model.resources.Resources;
 import model.unit.Entity;
-import model.unit.buildings.impl.MillImpl;
+import model.unit.buildings.impl.Mill_1_Impl;
 import resources.images.ImageInstance;
 import service.gui.MainService;
 

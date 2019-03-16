@@ -8,6 +8,6 @@ ID [all] {12345678}:
 
 tests:{
 ID [item] : 10a000bc >>> that is( [level_1][item][now_image_{a}][antitude_to_you_none][concret_type_none][material_{bc}] )
-ID [human] : 11a143bc >>> 
+ID [human] : 11a143bc >>>
 
 }

@@ -1,19 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.unit.buildings;
 
 import model.resources.ResourcesType;
 import model.unit.BuildingsInterface;
 
-/**
- *
- * @author admin
- */
 public enum ProductionBuildingsType implements BuildingsInterface {
-    MILL("Mill", 500, 100, 0, ResourcesType.FOOD, 1, 10, BuildingsType.PRODUCTION, 10);
+    MILL_1(1,"Mill", 500, 100, 0, ResourcesType.FOOD, 1, 10, BuildingsType.PRODUCTION, 10);
+    private int ID;
     private String name;
     private int health;
     private int defense;
@@ -25,6 +17,7 @@ public enum ProductionBuildingsType implements BuildingsInterface {
     private int price;
 
     ProductionBuildingsType(
+            int ID,
             String name,
             int health,
             int defense,
@@ -35,6 +28,7 @@ public enum ProductionBuildingsType implements BuildingsInterface {
             BuildingsType type,
             int price
     ) {
+        this.ID = ID;
         this.name = name;
         this.health = health;
         this.defense = defense;
@@ -44,6 +38,14 @@ public enum ProductionBuildingsType implements BuildingsInterface {
         this.profit = profit;
         this.type = type;
         this.price = price;
+    }
+    
+    public int getID(){
+        return ID;
+    }
+    
+    public void setID(){
+        this.ID = ID;
     }
 
     @Override

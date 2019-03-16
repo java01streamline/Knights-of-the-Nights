@@ -1,14 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package common;
 
 import java.awt.image.BufferedImage;
 import java.util.HashMap;
 import java.util.Map;
-import model.unit.buildings.impl.MillImpl;
+import model.unit.buildings.impl.Mill_1_Impl;
 import resources.images.BuildingsImageLoader;
 
 /**
@@ -28,6 +23,6 @@ public class BuildingsView {
     
     public static void initPairs(){
         pairs = new HashMap<>();
-        pairs.put(MillImpl.class, BuildingsImageLoader.getMill());
+        pairs.put(Mill_1_Impl.class, BuildingsImageLoader.getMill());
     }
 }
