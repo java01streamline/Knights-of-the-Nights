@@ -2,6 +2,7 @@ package model.unit.buildings.impl;
 
 import java.util.AbstractMap;
 import java.util.HashMap;
+import java.util.logging.Logger;
 import model.resources.ResourcesType;
 import model.unit.BuildingsInterface;
 import model.unit.buildings.BuildingsType;
@@ -12,7 +13,6 @@ public final class Mill_1_Impl extends Production {
 
     public Mill_1_Impl() {
         super(
-                ProductionBuildingsType.MILL_1.getID(),
                 ProductionBuildingsType.MILL_1.getName(),
                 ProductionBuildingsType.MILL_1.getHealth(),
                 ProductionBuildingsType.MILL_1.getAttack(),
@@ -21,6 +21,11 @@ public final class Mill_1_Impl extends Production {
                 ProductionBuildingsType.MILL_1.getPrice(),
                 ProductionBuildingsType.MILL_1.getLevel());
     }
+
+    public static Logger getLOG() {
+        return LOG;
+    }
+    private static final Logger LOG = Logger.getLogger(Mill_1_Impl.class.getName());
 
     @Override
     public HashMap.SimpleEntry<ResourcesType, Integer> getResource() {

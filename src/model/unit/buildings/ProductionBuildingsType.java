@@ -39,12 +39,16 @@ public enum ProductionBuildingsType implements BuildingsInterface {
         this.type = type;
         this.price = price;
     }
-    
-    public int getID(){
+
+    public static ProductionBuildingsType getMILL_1() {
+        return MILL_1;
+    }
+   
+    public int getId() {
         return ID;
     }
     
-    public void setID(){
+    public void setId() {
         this.ID = ID;
     }
 
